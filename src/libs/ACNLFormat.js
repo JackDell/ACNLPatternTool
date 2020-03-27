@@ -189,7 +189,7 @@ class ACNLFormat{
     if (i < 0 || i > 14){return 0;}
     return this.dataBytes[0x58 + i];
   }
-  
+
   setPalette(i, newVal){
     if (i < 0 || i > 14){return;}
     this.dataBytes[0x58 + i] = newVal;
@@ -307,7 +307,8 @@ class ACNLFormat{
     this.dataBytes[41] = 0;
   }
   static widthForType(t){
-    return ACNLFormat.typeInfo[t].size;
+    return t > 9? 64: ACNLFormat.typeInfo[t].size;
+    // return ACNLFormat.typeInfo[t].size;
   }
   static bytesForType(t){
     return this.widthForType(t) > 32 ? 2160 : 620;

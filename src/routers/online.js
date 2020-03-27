@@ -5,6 +5,7 @@ import Browse from '/pages/Browse.vue';
 import Editor from '/pages/Editor.vue';
 import FAQ from '/pages/FAQ.vue';
 import Changelog from '/pages/Changelog.vue';
+import Generator from '/pages/Generator.vue';
 import Missing from '/pages/Missing.vue';
 import ModeratorIndex from '/pages/moderator/Index.vue';
 import ModeratorLogin from '/pages/moderator/Login.vue';
@@ -14,25 +15,7 @@ Vue.use(VueRouter);
 const mode = "history";
 
 const routes = [
-  { path: "/", component: Home },
-  { path: "/browse", component: Browse },
-  { path: "/editor", component: Editor },
-  { path: "/faq", component: FAQ },
-  { path: "/changelog", component: Changelog },
-  {
-    path: "/moderator",
-    component: ModeratorIndex,
-    children: [
-      {
-        path: "login",
-        component: ModeratorLogin
-      },
-      {
-        path: "dashboard",
-        component: ModeratorDashboard
-      },
-    ]
-  },
+  { path: "/", component:  Generator},
   { path: "*", component: Missing }
 ];
 
